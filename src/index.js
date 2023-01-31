@@ -1,5 +1,5 @@
 // import your function
-import callApi from './one';
+import callApi from './fetch';
 import './style.css';
 
-callApi();
+// callApi();
