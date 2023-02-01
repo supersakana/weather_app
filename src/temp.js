@@ -1,7 +1,9 @@
-export function toF(temp) {
+function toF(temp) {
   return Math.floor((1.8 * (temp - 273.15) + 32));
 }
 
-export function toC(temp) {
+function toC(temp) {
   return Math.floor(temp - 273.15);
 }
+
+export { toF, toC };
