@@ -7,13 +7,11 @@
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   </head>
-  <body>
-    <h1 class="text-4xl text-blue-700">Weather App</h1>
-    <form>
-      <ion-icon name="search-outline"></ion-icon>
-      <input type="text" id="search" name="search" placeholder="Type in a city here..." />
-      <button id="submit">Search</button>
+  <body class="w-full h-screen bg-gray-100">
+    <form class="h-[20vh] flex items-center justify-center mx-2">
+      <input type="text" id="search" class="shadow-2xl rounded-3xl text-lg md:text-2xl px-3 py-1" name="search" placeholder="Search for a city here..." />
+      <button id="submit" class="flex justify-center items-center ml-1"><ion-icon class="text-2xl md:text-3xl" name="search"></ion-icon></button>
     </form>
-    <div id="results"></div>
+    <div id="results" class="h-[80vh]"></div>
   </body>
 </html>
