@@ -1,11 +1,16 @@
-export default function appendResults(content) {
+import { toF, toC } from './temp';
+
+function appendResults(content) {
   const results = document.querySelector('#results');
-  results.innerHTML = '';
-  results.append(content);
+  results.innerHTML = content;
 }
 
-// function weatherCard() {
-//   const card = document.createElement('div');
-//   const city = document.createElement('h3');
-//   const temp = document.createElement('')
-// }
+function weatherCard(data) {
+  appendResults(`<span>${data.name},
+                  ${data.weather[0].main},
+                   Current: ${toF(data.main.temp)}/${toC(data.main.temp)},
+                   High: ${toF(data.main.temp_max)}/${toC(data.main.temp_max)},
+                   Low: ${toF(data.main.temp_min)}/${toC(data.main.temp_min)}</span>`);
+}
+
+export { appendResults, weatherCard };
