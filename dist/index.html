@@ -15,8 +15,16 @@
     <div id="results" class="h-[70vh] bg-gray-100 md:mx-10 mx-6 rounded-xl shadow-2xl grid md:grid-cols-sidebar">
       <!-- LEFT -->
       <div class="bg-white flex flex-col py-2 px-3 rounded-t-xl md:rounded-r-none md:rounded-l-xl justify-evenly">
-        <!-- Icon -->
-        <ion-icon class="self-center text-amber-400 text-9xl" name="sunny-outline"></ion-icon>
+        <!-- City -->
+        <div class="flex flex-col gap-y-2">
+          <h3 class="self-center text-3xl text-center">Virginia Beach</h3>
+          <!-- Date time -->
+          <div class="flex justify-center items-center gap-x-1 text-lg">
+            <span>Monday</span>
+            <span class="text-gray-400">16:00</span>
+          </div>
+          <hr class="border-gray-200 mt-[10px]">
+        </div>
         <!-- Temp -->
         <div class="flex justify-center">
           <span class="text-6xl">57</span>
@@ -38,17 +46,84 @@
             <span>F</span>
           </div>
         </div>
-        <!-- Date time -->
-        <div class="flex justify-center items-center gap-x-1 text-xl">
-          <span>Monday</span>
-          <span class="text-gray-500">16:00</span>
+        <!-- Icon -->
+        <div class="self-center flex justify-center items-center">
+          <img class="w-[50px] h-[50px]"src="http://openweathermap.org/img/wn/11n@2x.png">
+          <h3 class="text-lg">Scattered clouds</h3>
         </div>
-        <hr class="border-gray-200">
-        <!-- City -->
-        <h3 class="self-center text-3xl text-center">Virginia Beach</h3>
+
       </div>
       <!-- RIGHT -->
-      <div></div>
+      <div class="m-3">
+        <!-- TOP -->
+        <div class=" h-[60%] grid grid-cols-2 md:grid-cols-3 gap-3">
+          <!-- HUMIDITY -->
+          <div class="bg-white flex flex-col justify-center gap-y-5 px-4 py-3 rounded-lg shadow-md">
+            <div class="flex justify-between items-center">
+              <span class="text-md">Humidity</span>
+              <ion-icon class="text-blue-600 text-2xl" name="water"></ion-icon>
+            </div>
+            <div class="flex">
+              <span class="text-4xl">85</span>
+              <span>%</span>
+            </div>
+          </div>
+
+          <!-- VISIBILITY -->
+          <div class="bg-white flex flex-col justify-center gap-y-5 px-4 py-3 rounded-lg shadow-md">
+            <div class="flex justify-between items-center">
+              <span class="text-md">Visibility</span>
+              <ion-icon class="text-2xl text-cyan-600" name="eye"></ion-icon>
+            </div>
+            <span class="text-4xl">10k</span>
+          </div>
+
+          <div class="bg-white flex flex-col justify-center gap-y-5 px-4 py-3 rounded-lg shadow-md">
+            <div class="flex justify-between items-center">
+              <span class="text-md">Sunset & Sunrise</span>
+              <ion-icon class="text-amber-400 text-xl" name="sunny"></ion-icon>
+            </div>
+            <div class="flex">
+              <span class="text-4xl">85</span>
+              <span>%</span>
+            </div>
+          </div>
+
+          <div class="bg-white flex flex-col justify-center gap-y-5 px-4 py-3 rounded-lg shadow-md">
+            <div class="flex justify-between items-center">
+              <span class="text-md">Humidity</span>
+              <ion-icon class="text-blue-600 text-xl" name="water"></ion-icon>
+            </div>
+            <div class="flex">
+              <span class="text-4xl">85</span>
+              <span>%</span>
+            </div>
+          </div>
+
+          <div class="bg-white flex flex-col justify-center gap-y-5 px-4 py-3 rounded-lg shadow-md">
+            <div class="flex justify-between items-center">
+              <span class="text-md">Humidity</span>
+              <ion-icon class="text-blue-600 text-xl" name="water"></ion-icon>
+            </div>
+            <div class="flex">
+              <span class="text-4xl">85</span>
+              <span>%</span>
+            </div>
+          </div>
+
+          <div class="bg-white flex flex-col justify-center gap-y-5 px-4 py-3 rounded-lg shadow-md">
+            <div class="flex justify-between items-center">
+              <span class="text-md">Humidity</span>
+              <ion-icon class="text-blue-600 text-xl" name="water"></ion-icon>
+            </div>
+            <div class="flex">
+              <span class="text-4xl">85</span>
+              <span>%</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
     </div>
   </body>
 </html>
