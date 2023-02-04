@@ -27,7 +27,7 @@
         </div>
         <!-- Temp -->
         <div class="flex justify-center">
-          <span class="text-6xl">57</span>
+          <span class="text-6xl md:text-7xl">57</span>
           <div class="w-[10px] h-[10px] border-black border-[2px] rounded-full mx-[3px]"></div>
           <span class="text-4xl">F</span>
         </div>
@@ -49,14 +49,14 @@
         <!-- Icon -->
         <div class="self-center flex justify-center items-center">
           <img class="w-[50px] h-[50px]"src="http://openweathermap.org/img/wn/11n@2x.png">
-          <h3 class="text-lg">Scattered clouds</h3>
+          <h3 class="text-lg">Thunderstorms</h3>
         </div>
 
       </div>
       <!-- RIGHT -->
       <div class="m-3">
         <!-- TOP -->
-        <div class=" h-[60%] grid grid-cols-2 md:grid-cols-3 gap-3">
+        <div class=" h-[100%] grid grid-cols-2 md:grid-cols-3 gap-3">
           <!-- HUMIDITY -->
           <div class="bg-white flex flex-col justify-center gap-y-5 px-4 py-3 rounded-lg shadow-md">
             <div class="flex justify-between items-center">
@@ -73,52 +73,60 @@
           <div class="bg-white flex flex-col justify-center gap-y-5 px-4 py-3 rounded-lg shadow-md">
             <div class="flex justify-between items-center">
               <span class="text-md">Visibility</span>
-              <ion-icon class="text-2xl text-cyan-600" name="eye"></ion-icon>
+              <ion-icon class="text-2xl text-teal-400" name="eye"></ion-icon>
             </div>
             <span class="text-4xl">10k</span>
           </div>
 
-          <div class="bg-white flex flex-col justify-center gap-y-5 px-4 py-3 rounded-lg shadow-md">
+          <!-- SUN RISE/SET -->
+          <div class="bg-white flex flex-col justify-center gap-y-2 px-4 py-3 rounded-lg shadow-md">
             <div class="flex justify-between items-center">
               <span class="text-md">Sunset & Sunrise</span>
-              <ion-icon class="text-amber-400 text-xl" name="sunny"></ion-icon>
+              <ion-icon class="text-amber-400 text-2xl" name="sunny"></ion-icon>
+            </div>
+            <div>
+              <div class="flex items-center gap-x-2">
+                <ion-icon class="text-black" name="arrow-up"></ion-icon>
+                <span class="text-md">6:35 AM</span>
+              </div>
+              <div class="flex items-center gap-x-2">
+                <ion-icon class="text-black" name="arrow-down"></ion-icon>
+                <span class="text-md">5:42 PM</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- CLOUDINESS -->
+          <div class="bg-white flex flex-col justify-center gap-y-5 px-4 py-3 rounded-lg shadow-md">
+            <div class="flex justify-between items-center">
+              <span class="text-md">Cloudiness</span>
+              <ion-icon class="text-violet-400 text-2xl" name="cloud"></ion-icon>
             </div>
             <div class="flex">
-              <span class="text-4xl">85</span>
+              <span class="text-4xl">100</span>
               <span>%</span>
+            </div>
+          </div>
+
+          <!-- WIND -->
+          <div class="bg-white flex flex-col justify-center gap-y-5 px-4 py-3 rounded-lg shadow-md">
+            <div class="flex justify-between items-center">
+              <span class="text-md">Wind speed</span>
+              <ion-icon class="text-rose-400 text-2xl" name="speedometer"></ion-icon>
+            </div>
+            <div class="flex">
+              <span class="text-4xl">6mph</span>
             </div>
           </div>
 
           <div class="bg-white flex flex-col justify-center gap-y-5 px-4 py-3 rounded-lg shadow-md">
             <div class="flex justify-between items-center">
-              <span class="text-md">Humidity</span>
-              <ion-icon class="text-blue-600 text-xl" name="water"></ion-icon>
+              <span class="text-md">Wind direction</span>
+              <ion-icon class="text-cyan-500 text-2xl rotate-[250deg]" name="arrow-up-circle"></ion-icon>
             </div>
             <div class="flex">
-              <span class="text-4xl">85</span>
-              <span>%</span>
-            </div>
-          </div>
-
-          <div class="bg-white flex flex-col justify-center gap-y-5 px-4 py-3 rounded-lg shadow-md">
-            <div class="flex justify-between items-center">
-              <span class="text-md">Humidity</span>
-              <ion-icon class="text-blue-600 text-xl" name="water"></ion-icon>
-            </div>
-            <div class="flex">
-              <span class="text-4xl">85</span>
-              <span>%</span>
-            </div>
-          </div>
-
-          <div class="bg-white flex flex-col justify-center gap-y-5 px-4 py-3 rounded-lg shadow-md">
-            <div class="flex justify-between items-center">
-              <span class="text-md">Humidity</span>
-              <ion-icon class="text-blue-600 text-xl" name="water"></ion-icon>
-            </div>
-            <div class="flex">
-              <span class="text-4xl">85</span>
-              <span>%</span>
+              <span class="text-4xl">250</span>
+              <div class="w-[7px] h-[7px] border-black border-[2px] rounded-full mx-[3px]"></div>
             </div>
           </div>
 
