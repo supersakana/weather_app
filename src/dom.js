@@ -1,5 +1,5 @@
 import {
-  toF, toC, toTime,
+  toF, toC, toTime, sunRiseSet,
 } from './temp';
 
 function appendResults(content) {
@@ -84,7 +84,7 @@ function weatherCard(data) {
             <span class="text-4xl">${Math.floor(data.visibility / 1000)}k</span>
           </div>
 
-          <!-- SUN RISE/SET -->
+          <!-- Sun rise/set -->
           <div class="bg-white flex flex-col justify-center gap-y-2 px-4 py-3 rounded-lg shadow-md">
             <div class="flex justify-between items-center">
               <span class="text-md">Sunset & Sunrise</span>
@@ -93,11 +93,11 @@ function weatherCard(data) {
             <div>
               <div class="flex items-center gap-x-2">
                 <ion-icon class="text-black" name="arrow-up"></ion-icon>
-                <span class="text-md">6:35 AM</span>
+                <span class="text-md">${sunRiseSet(data.sys.sunrise, data.timezone)}</span>
               </div>
               <div class="flex items-center gap-x-2">
                 <ion-icon class="text-black" name="arrow-down"></ion-icon>
-                <span class="text-md">5:42 PM</span>
+                <span class="text-md">${sunRiseSet(data.sys.sunset, data.timezone)}</span>
               </div>
             </div>
           </div>
