@@ -1,4 +1,6 @@
-import { toF, toC } from './temp';
+import {
+  toF, toC, toTime,
+} from './temp';
 
 function appendResults(content) {
   const results = document.querySelector('#results');
@@ -6,7 +8,6 @@ function appendResults(content) {
 }
 
 function weatherCard(data) {
-  console.log(data);
   appendResults(
     `
       <!-- LEFT -->
@@ -15,16 +16,18 @@ function weatherCard(data) {
         <!-- City -->
         <div class="flex flex-col gap-y-2">
           <h3 class="self-center text-3xl text-center">${data.name}</h3>
+
           <!-- Date time -->
           <div class="flex justify-center items-center gap-x-1 text-lg">
-            <span>Monday</span>
-            <span class="text-gray-400">16:00</span>
+            <span>${toTime(data.timezone, 'dddd')}</span>
+            <span class="text-gray-400">${toTime(data.timezone, 'h:mm A')}</span>
           </div>
           <hr class="border-gray-200 mt-[10px]">
         </div>
+
         <!-- Temp -->
         <div class="flex justify-center">
-          <span class="text-6xl md:text-7xl">57</span>
+          <span class="text-6xl md:text-7xl">${toF(data.main.temp)}</span>
           <div class="w-[10px] h-[10px] border-black border-[2px] rounded-full mx-[3px]"></div>
           <span class="text-4xl">F</span>
         </div>
