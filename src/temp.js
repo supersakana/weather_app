@@ -14,6 +14,10 @@ function sunRiseSet(zone, time) {
   return moment.utc(time, 'X').add(zone, 'seconds').format('h:mm A');
 }
 
+function toMph(speed) {
+  return Math.floor(speed * 2.2369);
+}
+
 export {
-  toF, toC, toTime, sunRiseSet,
+  toF, toC, toTime, sunRiseSet, toMph,
 };

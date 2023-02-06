@@ -1,5 +1,5 @@
 import {
-  toF, toC, toTime, sunRiseSet,
+  toF, toC, toTime, sunRiseSet, toMph,
 } from './temp';
 
 function appendResults(content) {
@@ -121,7 +121,7 @@ function weatherCard(data) {
               <ion-icon class="text-rose-400 text-2xl" name="speedometer"></ion-icon>
             </div>
             <div class="flex">
-              <span class="text-4xl">6mph</span>
+              <span class="text-4xl">${toMph(data.wind.speed)}mph</span>
             </div>
           </div>
 
