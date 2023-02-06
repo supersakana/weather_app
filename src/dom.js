@@ -75,13 +75,13 @@ function weatherCard(data) {
             </div>
           </div>
 
-          <!-- VISIBILITY -->
+          <!-- Visibility -->
           <div class="bg-white flex flex-col justify-center gap-y-5 px-4 py-3 rounded-lg shadow-md">
             <div class="flex justify-between items-center">
               <span class="text-md">Visibility</span>
               <ion-icon class="text-2xl text-teal-400" name="eye"></ion-icon>
             </div>
-            <span class="text-4xl">10k</span>
+            <span class="text-4xl">${Math.floor(data.visibility / 1000)}k</span>
           </div>
 
           <!-- SUN RISE/SET -->
