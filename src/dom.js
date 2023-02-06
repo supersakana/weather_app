@@ -129,10 +129,10 @@ function weatherCard(data) {
           <div class="bg-white flex flex-col justify-center gap-y-5 px-4 py-3 rounded-lg shadow-md">
             <div class="flex justify-between items-center">
               <span class="text-md">Wind direction</span>
-              <ion-icon class="text-cyan-500 text-2xl rotate-[250deg]" name="arrow-up-circle"></ion-icon>
+              <ion-icon class="text-cyan-500 text-2xl" name="compass"></ion-icon>
             </div>
             <div class="flex">
-              <span class="text-4xl">250</span>
+              <span class="text-4xl">${data.wind.deg}</span>
               <div class="w-[7px] h-[7px] border-black border-[2px] rounded-full mx-[3px]"></div>
             </div>
           </div>
