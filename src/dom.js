@@ -35,13 +35,13 @@ function weatherCard(data) {
         <div class="flex gap-x-3 text-xl justify-center">
           <!-- High -->
           <div class="flex text-orange-500">
-            <span>60</span>
+            <span>${toF(data.main.temp_max)}</span>
             <div class="w-[5px] h-[5px] border-orange-500 border-[1.5px] rounded-full"></div>
             <span>F</span>
           </div>
           <!-- Low -->
           <div class="flex text-sky-500">
-            <span>55</span>
+            <span>${toF(data.main.temp_min)}</span>
             <div class="w-[5px] h-[5px] border-sky-500 border-[1.5px] rounded-full"></div>
             <span>F</span>
           </div>
