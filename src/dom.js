@@ -109,7 +109,7 @@ function weatherCard(data) {
               <ion-icon class="text-violet-400 text-2xl" name="cloud"></ion-icon>
             </div>
             <div class="flex">
-              <span class="text-4xl">100</span>
+              <span class="text-4xl">${data.clouds.all}</span>
               <span>%</span>
             </div>
           </div>
