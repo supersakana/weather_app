@@ -48,8 +48,8 @@ function weatherCard(data) {
         </div>
         <!-- Icon -->
         <div class="self-center flex justify-center items-center">
-          <img class="w-[50px] h-[50px]"src="http://openweathermap.org/img/wn/11n@2x.png">
-          <h3 class="text-lg">Thunderstorms</h3>
+          <img class="w-[50px] h-[50px]"src="http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png">
+          <h3 class="text-lg">${data.weather[0].main}</h3>
         </div>
 
       </div>
