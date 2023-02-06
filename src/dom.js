@@ -31,14 +31,17 @@ function weatherCard(data) {
           <div class="w-[10px] h-[10px] border-black border-[2px] rounded-full mx-[3px]"></div>
           <span class="text-4xl">F</span>
         </div>
+
         <!-- High/Low -->
         <div class="flex gap-x-3 text-xl justify-center">
+
           <!-- High -->
           <div class="flex text-orange-500">
             <span>${toF(data.main.temp_max)}</span>
             <div class="w-[5px] h-[5px] border-orange-500 border-[1.5px] rounded-full"></div>
             <span>F</span>
           </div>
+
           <!-- Low -->
           <div class="flex text-sky-500">
             <span>${toF(data.main.temp_min)}</span>
@@ -46,26 +49,28 @@ function weatherCard(data) {
             <span>F</span>
           </div>
         </div>
+
         <!-- Icon -->
         <div class="self-center flex justify-center items-center">
           <img class="w-[50px] h-[50px]"src="http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png">
           <h3 class="text-lg">${data.weather[0].main}</h3>
         </div>
-
       </div>
+
       <!-- RIGHT -->
       <div class="m-3">
+
         <!-- TOP -->
         <div class=" h-[100%] grid grid-cols-2 md:grid-cols-3 gap-3">
           
-          <!-- HUMIDITY -->
+          <!-- Humidity -->
           <div class="bg-white flex flex-col justify-center gap-y-5 px-4 py-3 rounded-lg shadow-md">
             <div class="flex justify-between items-center">
               <span class="text-md">Humidity</span>
               <ion-icon class="text-blue-600 text-2xl" name="water"></ion-icon>
             </div>
             <div class="flex">
-              <span class="text-4xl">85</span>
+              <span class="text-4xl">${data.main.humidity}</span>
               <span>%</span>
             </div>
           </div>
