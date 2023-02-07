@@ -1,6 +1,6 @@
 import {
   toF, toC, toTime, sunRiseSet, toMph,
-} from './temp';
+} from './conversion';
 
 function appendResults(content) {
   const results = document.querySelector('#results');
@@ -61,7 +61,7 @@ function weatherCard(data) {
       <div class="m-3">
 
         <!-- TOP -->
-        <div class=" h-[100%] grid grid-cols-2 md:grid-cols-3 gap-3">
+        <div class=" h-[100%] grid grid-cols-2 md:grid-cols-3 gap-4">
           
           <!-- Humidity -->
           <div class="bg-white flex flex-col justify-center gap-y-5 px-4 py-3 rounded-lg shadow-md">
