@@ -21,7 +21,7 @@ function weatherCard(current, forcast) {
           <!-- Date time -->
           <div class="flex justify-center items-center gap-x-1 text-lg">
             <span>${toTime(current.timezone, 'dddd')}</span>
-            <span class="text-gray-400">${toTime(current.timezone, 'h:mm A')}</span>
+            <span>${toTime(current.timezone, 'h:mm A')}</span>
           </div>
           <hr class="border-gray-200 mt-[10px]">
         </div>
@@ -37,16 +37,16 @@ function weatherCard(current, forcast) {
         <div class="flex gap-x-3 text-xl justify-center">
 
           <!-- High -->
-          <div class="flex text-orange-500">
+          <div class="flex text-black">
             <span>${toF(current.main.temp_max)}</span>
-            <div class="w-[5px] h-[5px] border-orange-500 border-[1.5px] rounded-full"></div>
+            <div class="w-[5px] h-[5px] border-black border-[1.5px] rounded-full"></div>
             <span>F</span>
           </div>
 
           <!-- Low -->
-          <div class="flex text-sky-500">
+          <div class="flex text-grey-400">
             <span>${toF(current.main.temp_min)}</span>
-            <div class="w-[5px] h-[5px] border-sky-500 border-[1.5px] rounded-full"></div>
+            <div class="w-[5px] h-[5px] border-gray-400 border-[1.5px] rounded-full"></div>
             <span>F</span>
           </div>
         </div>
@@ -59,9 +59,97 @@ function weatherCard(current, forcast) {
       </div>
 
       <!-- RIGHT -->
-      <div class="m-3">
+      <div class="my-3 mx-3 md:mx-9 flex flex-col gap-y-3">
 
-        <!-- TOP -->
+        <div class="flex gap-x-2 text-xl">
+          <span class="text-gray-400 cursor-pointer">3 hour</span>
+          <span class="underline cursor-pointer">5 day</span>
+        </div>
+
+        <!-- Forcast -->
+        <div class="grid grid-cols-5 gap-3">
+
+          <div class="bg-white flex flex-col items-center justify-center gap-y-3 py-3 rounded-lg shadow-md">
+            <span class="text-md md:text-lg">Feb 7</span>
+            <img class="w-[40px] h-[40px]"src="http://openweathermap.org/img/wn/11n@2x.png">
+            <div class="flex text-sm items-center justify-center gap-x-2">
+              <div class="flex">
+                <span>60</span>
+                <div class="w-[5px] h-[5px] border-black border-[1.5px] rounded-full"></div>
+              </div>
+              <div class="flex text-gray-400">
+                <span>52</span>
+                <div class="w-[5px] h-[5px] border-gray-400 border-[1.5px] rounded-full"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white flex flex-col items-center justify-center gap-y-3 py-3 rounded-lg shadow-md">
+            <span class="text-md md:text-lg">Feb 8</span>
+            <img class="w-[40px] h-[40px]"src="http://openweathermap.org/img/wn/10d@2x.png">
+            <div class="flex text-sm items-center justify-center gap-x-2">
+              <div class="flex">
+                <span>60</span>
+                <div class="w-[5px] h-[5px] border-black border-[1.5px] rounded-full"></div>
+              </div>
+              <div class="flex text-gray-400">
+                <span>52</span>
+                <div class="w-[5px] h-[5px] border-gray-400 border-[1.5px] rounded-full"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white flex flex-col items-center justify-center gap-y-3 py-3 rounded-lg shadow-md">
+            <span class="text-md md:text-lg">Feb 9</span>
+            <img class="w-[40px] h-[40px]"src="http://openweathermap.org/img/wn/01d@2x.png">
+            <div class="flex text-sm items-center justify-center gap-x-2">
+              <div class="flex">
+                <span>60</span>
+                <div class="w-[5px] h-[5px] border-black border-[1.5px] rounded-full"></div>
+              </div>
+              <div class="flex text-gray-400">
+                <span>52</span>
+                <div class="w-[5px] h-[5px] border-gray-400 border-[1.5px] rounded-full"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white flex flex-col items-center justify-center gap-y-3 py-3 rounded-lg shadow-md">
+            <span class="text-md md:text-lg">Feb 10</span>
+            <img class="w-[40px] h-[40px]"src="http://openweathermap.org/img/wn/02d@2x.png">
+            <div class="flex text-sm items-center justify-center gap-x-2">
+              <div class="flex">
+                <span>60</span>
+                <div class="w-[5px] h-[5px] border-black border-[1.5px] rounded-full"></div>
+              </div>
+              <div class="flex text-gray-400">
+                <span>52</span>
+                <div class="w-[5px] h-[5px] border-gray-400 border-[1.5px] rounded-full"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white flex flex-col items-center justify-center gap-y-3 py-3 rounded-lg shadow-md">
+            <span class="text-md md:text-lg">Feb 11</span>
+            <img class="w-[40px] h-[40px]"src="http://openweathermap.org/img/wn/02d@2x.png">
+            <div class="flex text-sm items-center justify-center gap-x-2">
+              <div class="flex">
+                <span>60</span>
+                <div class="w-[5px] h-[5px] border-black border-[1.5px] rounded-full"></div>
+              </div>
+              <div class="flex text-gray-400">
+                <span>52</span>
+                <div class="w-[5px] h-[5px] border-gray-400 border-[1.5px] rounded-full"></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Todays Highlights -->
+
+        <h5 class="text-xl my-1">Today's Highlights</h5>
+
         <div class=" h-[100%] grid grid-cols-2 md:grid-cols-3 gap-4">
           
           <!-- Humidity -->
