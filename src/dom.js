@@ -7,7 +7,8 @@ function appendResults(content) {
   results.innerHTML = content;
 }
 
-function weatherCard(data) {
+function weatherCard(current, forcast) {
+  console.log(forcast);
   appendResults(
     `
       <!-- LEFT -->
@@ -15,19 +16,19 @@ function weatherCard(data) {
 
         <!-- City -->
         <div class="flex flex-col gap-y-2">
-          <h3 class="self-center text-3xl text-center">${data.name}</h3>
+          <h3 class="self-center text-3xl text-center">${current.name}</h3>
 
           <!-- Date time -->
           <div class="flex justify-center items-center gap-x-1 text-lg">
-            <span>${toTime(data.timezone, 'dddd')}</span>
-            <span class="text-gray-400">${toTime(data.timezone, 'h:mm A')}</span>
+            <span>${toTime(current.timezone, 'dddd')}</span>
+            <span class="text-gray-400">${toTime(current.timezone, 'h:mm A')}</span>
           </div>
           <hr class="border-gray-200 mt-[10px]">
         </div>
 
         <!-- Temp -->
         <div class="flex justify-center">
-          <span class="text-6xl md:text-7xl">${toF(data.main.temp)}</span>
+          <span class="text-6xl md:text-7xl">${toF(current.main.temp)}</span>
           <div class="w-[10px] h-[10px] border-black border-[2px] rounded-full mx-[3px]"></div>
           <span class="text-4xl">F</span>
         </div>
@@ -37,14 +38,14 @@ function weatherCard(data) {
 
           <!-- High -->
           <div class="flex text-orange-500">
-            <span>${toF(data.main.temp_max)}</span>
+            <span>${toF(current.main.temp_max)}</span>
             <div class="w-[5px] h-[5px] border-orange-500 border-[1.5px] rounded-full"></div>
             <span>F</span>
           </div>
 
           <!-- Low -->
           <div class="flex text-sky-500">
-            <span>${toF(data.main.temp_min)}</span>
+            <span>${toF(current.main.temp_min)}</span>
             <div class="w-[5px] h-[5px] border-sky-500 border-[1.5px] rounded-full"></div>
             <span>F</span>
           </div>
@@ -52,8 +53,8 @@ function weatherCard(data) {
 
         <!-- Icon -->
         <div class="self-center flex justify-center items-center">
-          <img class="w-[50px] h-[50px]"src="http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png">
-          <h3 class="text-lg">${data.weather[0].main}</h3>
+          <img class="w-[50px] h-[50px]"src="http://openweathermap.org/img/wn/${current.weather[0].icon}@2x.png">
+          <h3 class="text-lg">${current.weather[0].main}</h3>
         </div>
       </div>
 
@@ -70,7 +71,7 @@ function weatherCard(data) {
               <ion-icon class="text-blue-600 text-2xl" name="water"></ion-icon>
             </div>
             <div class="flex">
-              <span class="text-4xl">${data.main.humidity}</span>
+              <span class="text-4xl">${current.main.humidity}</span>
               <span>%</span>
             </div>
           </div>
@@ -81,7 +82,7 @@ function weatherCard(data) {
               <span class="text-md">Visibility</span>
               <ion-icon class="text-2xl text-teal-400" name="eye"></ion-icon>
             </div>
-            <span class="text-4xl">${Math.floor(data.visibility / 1000)}k</span>
+            <span class="text-4xl">${Math.floor(current.visibility / 1000)}k</span>
           </div>
 
           <!-- Sun rise/set -->
@@ -93,11 +94,11 @@ function weatherCard(data) {
             <div>
               <div class="flex items-center gap-x-2">
                 <ion-icon class="text-black" name="arrow-up"></ion-icon>
-                <span class="text-md">${sunRiseSet(data.sys.sunrise, data.timezone)}</span>
+                <span class="text-md">${sunRiseSet(current.sys.sunrise, current.timezone)}</span>
               </div>
               <div class="flex items-center gap-x-2">
                 <ion-icon class="text-black" name="arrow-down"></ion-icon>
-                <span class="text-md">${sunRiseSet(data.sys.sunset, data.timezone)}</span>
+                <span class="text-md">${sunRiseSet(current.sys.sunset, current.timezone)}</span>
               </div>
             </div>
           </div>
@@ -109,7 +110,7 @@ function weatherCard(data) {
               <ion-icon class="text-violet-400 text-2xl" name="cloud"></ion-icon>
             </div>
             <div class="flex">
-              <span class="text-4xl">${data.clouds.all}</span>
+              <span class="text-4xl">${current.clouds.all}</span>
               <span>%</span>
             </div>
           </div>
@@ -121,7 +122,7 @@ function weatherCard(data) {
               <ion-icon class="text-rose-400 text-2xl" name="speedometer"></ion-icon>
             </div>
             <div class="flex">
-              <span class="text-4xl">${toMph(data.wind.speed)}mph</span>
+              <span class="text-4xl">${toMph(current.wind.speed)}mph</span>
             </div>
           </div>
 
@@ -132,7 +133,7 @@ function weatherCard(data) {
               <ion-icon class="text-cyan-500 text-2xl" name="compass"></ion-icon>
             </div>
             <div class="flex">
-              <span class="text-4xl">${data.wind.deg}</span>
+              <span class="text-4xl">${current.wind.deg}</span>
               <div class="w-[7px] h-[7px] border-black border-[2px] rounded-full mx-[3px]"></div>
             </div>
           </div>
