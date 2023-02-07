@@ -44,7 +44,7 @@ function weatherCard(current, forcast) {
           </div>
 
           <!-- Low -->
-          <div class="flex text-grey-400">
+          <div class="flex text-gray-400">
             <span>${toF(current.main.temp_min)}</span>
             <div class="w-[5px] h-[5px] border-gray-400 border-[1.5px] rounded-full"></div>
             <span>F</span>
