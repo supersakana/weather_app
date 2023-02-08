@@ -7,11 +7,11 @@ function toC(temp) {
 }
 
 function toTime(zone, form) {
-  return moment().utcOffset(zone / 60).format(form);
+  return moment().utcOffset(zone / 60).format(form); // eslint-disable-line
 }
 
 function sunRiseSet(zone, time) {
-  return moment.utc(time, 'X').add(zone, 'seconds').format('h:mm A');
+  return moment.utc(time, 'X').add(zone, 'seconds').format('h:mm A'); // eslint-disable-line
 }
 
 function toMph(speed) {
