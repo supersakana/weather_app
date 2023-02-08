@@ -2,13 +2,14 @@ import {
   toF, toC, toTime, sunRiseSet, toMph, // eslint-disable-line
 } from './conversion';
 
+import { forcastCards } from './forcast';
+
 function appendResults(content) {
   const results = document.querySelector('#results');
   results.innerHTML = content;
 }
 
 function weatherCard(current, forcast) {
-  console.log(forcast.list.map((x) => `${x.main.temp_min} - ${x.main.temp_max}`));
   appendResults(
     /* eslint-disable */
     `
@@ -67,7 +68,10 @@ function weatherCard(current, forcast) {
           <span class="underline cursor-pointer">5 day</span>
         </div>
 
-        ${forcastCards(forcast)}
+        <!-- Forcast -->
+        <div class="grid grid-cols-5 gap-3">
+          ${forcastCards(forcast)}
+        </div>
 
         <!-- Todays Highlights -->
 
@@ -153,93 +157,6 @@ function weatherCard(current, forcast) {
       </div>
     `,
   );
-
-  function forcastCards(forcast){
-    const layout = 
-    `
-    <!-- Forcast -->
-        <div class="grid grid-cols-5 gap-3">
-
-          <div class="bg-white flex flex-col items-center justify-center gap-y-3 py-3 rounded-lg shadow-md">
-            <span class="text-md md:text-lg">${moment(forcast.list[0].dt_txt).format('MMM D')}</span> 
-            <img class="w-[40px] h-[40px]"src="http://openweathermap.org/img/wn/${forcast.list[0].weather[0].icon}@2x.png">
-            <div class="flex text-sm items-center justify-center gap-x-2">
-              <div class="flex">
-                <span>${toF(forcast.list[0].main.temp_max)}</span>
-                <div class="w-[5px] h-[5px] border-black border-[1.5px] rounded-full"></div>
-              </div>
-              <div class="flex text-gray-400">
-                <span>${toF(forcast.list[0].main.temp_min)}</span>
-                <div class="w-[5px] h-[5px] border-gray-400 border-[1.5px] rounded-full"></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="bg-white flex flex-col items-center justify-center gap-y-3 py-3 rounded-lg shadow-md">
-            <span class="text-md md:text-lg">${moment(forcast.list[7].dt_txt).format('MMM D')}</span>
-            <img class="w-[40px] h-[40px]"src="http://openweathermap.org/img/wn/${forcast.list[7].weather[0].icon}@2x.png">
-            <div class="flex text-sm items-center justify-center gap-x-2">
-              <div class="flex">
-                <span>${toF(forcast.list[7].main.temp_max)}</span>
-                <div class="w-[5px] h-[5px] border-black border-[1.5px] rounded-full"></div>
-              </div>
-              <div class="flex text-gray-400">
-                <span>${toF(forcast.list[7].main.temp_min)}</span>
-                <div class="w-[5px] h-[5px] border-gray-400 border-[1.5px] rounded-full"></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="bg-white flex flex-col items-center justify-center gap-y-3 py-3 rounded-lg shadow-md">
-            <span class="text-md md:text-lg">${moment(forcast.list[14].dt_txt).format('MMM D')}</span>
-            <img class="w-[40px] h-[40px]"src="http://openweathermap.org/img/wn/${forcast.list[14].weather[0].icon}@2x.png">
-            <div class="flex text-sm items-center justify-center gap-x-2">
-              <div class="flex">
-                <span>${toF(forcast.list[14].main.temp_max)}</span>
-                <div class="w-[5px] h-[5px] border-black border-[1.5px] rounded-full"></div>
-              </div>
-              <div class="flex text-gray-400">
-                <span>${toF(forcast.list[14].main.temp_min)}</span>
-                <div class="w-[5px] h-[5px] border-gray-400 border-[1.5px] rounded-full"></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="bg-white flex flex-col items-center justify-center gap-y-3 py-3 rounded-lg shadow-md">
-            <span class="text-md md:text-lg">${moment(forcast.list[21].dt_txt).format('MMM D')}</span>
-            <img class="w-[40px] h-[40px]"src="http://openweathermap.org/img/wn/${forcast.list[21].weather[0].icon}@2x.png">
-            <div class="flex text-sm items-center justify-center gap-x-2">
-              <div class="flex">
-                <span>${toF(forcast.list[21].main.temp_max)}</span>
-                <div class="w-[5px] h-[5px] border-black border-[1.5px] rounded-full"></div>
-              </div>
-              <div class="flex text-gray-400">
-                <span>${toF(forcast.list[21].main.temp_min)}</span>
-                <div class="w-[5px] h-[5px] border-gray-400 border-[1.5px] rounded-full"></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="bg-white flex flex-col items-center justify-center gap-y-3 py-3 rounded-lg shadow-md">
-            <span class="text-md md:text-lg">${moment(forcast.list[28].dt_txt).format('MMM D')}</span>
-            <img class="w-[40px] h-[40px]"src="http://openweathermap.org/img/wn/${forcast.list[28].weather[0].icon}@2x.png">
-            <div class="flex text-sm items-center justify-center gap-x-2">
-              <div class="flex">
-                <span>${toF(forcast.list[28].main.temp_max)}</span>
-                <div class="w-[5px] h-[5px] border-black border-[1.5px] rounded-full"></div>
-              </div>
-              <div class="flex text-gray-400">
-                <span>${toF(forcast.list[28].main.temp_min)}</span>
-                <div class="w-[5px] h-[5px] border-gray-400 border-[1.5px] rounded-full"></div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-    `
-    return layout
-
-  }
   /* eslint-enable */
 }
 
