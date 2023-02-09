@@ -17,7 +17,7 @@ function weatherCard(current, forcast) {
       <div class="bg-white flex flex-col py-2 px-3 rounded-t-xl md:rounded-r-none md:rounded-l-xl justify-evenly">
 
         <!-- City -->
-        <div class="flex flex-col gap-y-2">
+        <div class="flex flex-col gap-y-2 my-[20px] md:my-0">
           <h3 class="self-center text-3xl text-center">${current.name}</h3>
 
           <!-- Date time -->
@@ -25,7 +25,7 @@ function weatherCard(current, forcast) {
             <span>${toTime(current.timezone, 'dddd')}</span>
             <span>${toTime(current.timezone, 'h:mm A')}</span>
           </div>
-          <hr class="border-gray-200 mt-[10px]">
+          <hr class="border-gray-200">
         </div>
 
         <!-- Temp -->
@@ -60,21 +60,19 @@ function weatherCard(current, forcast) {
         </div>
       </div>
 
-      <!-- RIGHT -->
-      <div class="my-3 mx-3 md:mx-9 flex flex-col gap-y-3">
+        <!-- RIGHT -->
+        <div class="my-3 mx-3 md:mx-9 flex flex-col gap-y-3">
 
-        <div class="flex gap-x-2 text-xl">
-          <span class="cursor-pointer">5 day Forcast</span>
-        </div>
+        <span class="cursor-pointer text-2xl text-center md:text-left">5 day Forcast</span>
 
         <!-- Forcast -->
-        <div class="grid grid-cols-5 gap-3">
+        <div class="grid grid-cols-5 gap-1 md:gap-3">
           ${forcastCards(forcast)}
         </div>
 
         <!-- Todays Highlights -->
 
-        <h5 class="text-xl my-1">Today's Highlights</h5>
+        <h5 class="text-2xl my-1 text-center md:text-left">Today's Highlights</h5>
 
         <div class=" h-[100%] grid grid-cols-2 md:grid-cols-3 gap-4">
           
