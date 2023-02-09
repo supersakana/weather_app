@@ -10,7 +10,7 @@ function forcastCards(forcast) {
   let i = 0
 
   forcast.list.forEach((day) => {
-    if (date != moment(day.dt_txt).format('MMM D') && i < 5) {
+    if (date != moment(day.dt_txt).format('MMM D') && i < 5 && day.weather[0].icon.includes('d')) {
       i += 1
       cards += 
        `
