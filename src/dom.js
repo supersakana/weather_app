@@ -64,8 +64,7 @@ function weatherCard(current, forcast) {
       <div class="my-3 mx-3 md:mx-9 flex flex-col gap-y-3">
 
         <div class="flex gap-x-2 text-xl">
-          <span class="text-gray-400 cursor-pointer">3 hour</span>
-          <span class="underline cursor-pointer">5 day</span>
+          <span class="cursor-pointer">5 day Forcast</span>
         </div>
 
         <!-- Forcast -->
