@@ -3,17 +3,21 @@ import { toF, toC } from './conversion';
 
 /* eslint-disable */
 function updateUnit(unit){
+  const units = document.querySelectorAll('.unit')
+
   if (unit.dataset.temp == 'f'){
     unit.dataset.temp = 'c'
+    units.forEach((u) => u.innerHTML = 'C')
+
   } else {
     unit.dataset.temp = 'f'
+    units.forEach((u) => u.innerHTML = 'F')
   }
 }
 
 function changeDegree() {
   const temps = document.querySelectorAll('.temp');
   let unit = document.querySelector('#results')
-  console.log(unit.dataset.temp)
 
   temps.forEach((temp) => {
     if (unit.dataset.temp == 'f'){
@@ -32,5 +36,13 @@ function displayTemp(temp) {
   return toF(temp);
 }
 
-export { changeDegree, displayTemp };
+function displayUnit(){
+  if (document.querySelector('#results').dataset.temp == 'c') {
+    return 'C'
+  } else {
+    return 'F'
+  }
+}
+
+export { changeDegree, displayTemp, displayUnit };
 /* eslint-enable */

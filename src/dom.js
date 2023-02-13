@@ -2,7 +2,7 @@ import {
   toF, toC, toTime, sunRiseSet, toMph, // eslint-disable-line
 } from './conversion';
 
-import { displayTemp } from './degree';
+import { displayTemp, displayUnit } from './degree';
 
 import { forcastCards } from './forcast';
 
@@ -34,7 +34,7 @@ function weatherCard(current, forcast) {
         <div class="flex justify-center">
           <span data-f="${toF(current.main.temp)}" data-c="${toC(current.main.temp)}" class="temp text-6xl md:text-7xl">${displayTemp(current.main.temp)}</span>
           <div class="w-[10px] h-[10px] border-black border-[2px] rounded-full mx-[3px]"></div>
-          <span class="text-4xl">F</span>
+          <span class="unit text-4xl">${displayUnit()}</span>
         </div>
 
         <!-- High/Low -->
@@ -44,14 +44,14 @@ function weatherCard(current, forcast) {
           <div class="flex text-black">
             <span data-f="${toF(current.main.temp_max)}" data-c="${toC(current.main.temp_max)}" class="temp">${displayTemp(current.main.temp_max)}</span>
             <div class="w-[5px] h-[5px] border-black border-[1.5px] rounded-full"></div>
-            <span>F</span>
+            <span class="unit">${displayUnit()}</span>
           </div>
 
           <!-- Low -->
           <div class="flex text-gray-400">
             <span data-f="${toF(current.main.temp_min)}" data-c="${toC(current.main.temp_min)}" class="temp">${displayTemp(current.main.temp_min)}</span>
             <div class="w-[5px] h-[5px] border-gray-400 border-[1.5px] rounded-full"></div>
-            <span>F</span>
+            <span class="unit">${displayUnit()}</span>
           </div>
         </div>
 
@@ -71,7 +71,7 @@ function weatherCard(current, forcast) {
         <div class="degree flex items-center justify-center bg-white text-black rounded-full w-[30px] h-[30px] shadow-md cursor-pointer">
             <div class="flex">
               <div class="w-[5px] h-[5px] border-black border-[1px] rounded-full m-[1px]"></div>
-              <span class="text-sm">F</span>
+              <span class="unit text-sm">${displayUnit()}</span>
             </div>
         </div>
       </div>  
