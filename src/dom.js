@@ -49,7 +49,7 @@ function weatherCard(current, forcast) {
 
           <!-- Low -->
           <div class="flex text-gray-400">
-            <span data-f="${toF(current.main.temp_min)}" data-c="${toC(current.main.temp_min)} class="temp">${displayTemp(current.main.temp_min)}</span>
+            <span data-f="${toF(current.main.temp_min)}" data-c="${toC(current.main.temp_min)}" class="temp">${displayTemp(current.main.temp_min)}</span>
             <div class="w-[5px] h-[5px] border-gray-400 border-[1.5px] rounded-full"></div>
             <span>F</span>
           </div>

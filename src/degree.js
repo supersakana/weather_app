@@ -2,21 +2,31 @@
 import { toF, toC } from './conversion';
 
 /* eslint-disable */
+function updateUnit(unit){
+  if (unit.dataset.temp == 'f'){
+    unit.dataset.temp = 'c'
+  } else {
+    unit.dataset.temp = 'f'
+  }
+}
+
 function changeDegree() {
   const temps = document.querySelectorAll('.temp');
-  const unit = document.querySelector('#results').dataset.temp
+  let unit = document.querySelector('#results')
+  console.log(unit.dataset.temp)
 
-  // temps.forEach((temp) => {
-  //   if (unit == 'f'){
-  //     temp.innerHTML = Math.round((5/9) * (parseInt(temp.innerHTML) - 32))
-  //   } else {
-  //     temp.innerHTML = Math.round(((9/5) * parseInt(temp.innerHTML)) + 32)
-  //   }
-  // })
+  temps.forEach((temp) => {
+    if (unit.dataset.temp == 'f'){
+      temp.innerHTML = temp.dataset.c
+    } else {
+      temp.innerHTML = temp.dataset.f
+    }
+  })
+  updateUnit(unit)
 }
 
 function displayTemp(temp) {
-  if (document.querySelector('#results').dataset.temp === 'f') {
+  if (document.querySelector('#results').dataset.temp === 'c') {
     return toC(temp);
   }
   return toF(temp);

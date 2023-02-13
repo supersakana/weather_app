@@ -17,11 +17,11 @@ function forcastCards(forcast) {
             <img class="w-[40px] h-[40px]"src="http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png">
             <div class="flex text-sm items-center justify-center gap-x-2">
               <div class="flex">
-                <span data-f="${toF(day.main.temp_max)}" data-c="${toC(day.main.temp_max)} class="temp">${displayTemp(day.main.temp_max)}</span>
+                <span data-f="${toF(day.main.temp_max)}" data-c="${toC(day.main.temp_max)}" class="temp">${displayTemp(day.main.temp_max)}</span>
                 <div class="w-[5px] h-[5px] border-black border-[1.5px] rounded-full"></div>
               </div>
               <div class="flex text-gray-400">
-              <span data-f="${toF(day.main.temp_min)}" data-c="${toC(day.main.temp_min)} class="temp">${displayTemp(day.main.temp_min)}</span>
+              <span data-f="${toF(day.main.temp_min)}" data-c="${toC(day.main.temp_min)}" class="temp">${displayTemp(day.main.temp_min)}</span>
                 <div class="w-[5px] h-[5px] border-gray-400 border-[1.5px] rounded-full"></div>
               </div>
             </div>
