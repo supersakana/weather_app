@@ -9,13 +9,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
   </head>
   <body class="w-full h-full bg-gray-300 font-poppins">
-    
-    <form class="h-[13vh] flex items-center justify-center">
-      <input type="text" id="search" class="shadow-2xl rounded-3xl text-md md:text-lg px-3 py-1" name="search" placeholder="Search for a city here..." />
-      <button id="submit" class="flex justify-center items-center ml-1"><ion-icon class="text-2xl md:text-3xl" name="search"></ion-icon></button>
-    </form>
 
-    <section class="md:h-[87vh] w-full md:flex flex-col justify-center items-center">
+    <section class="md:h-[100vh] w-full md:flex flex-col justify-center items-center">
+
+      <form id="form" class="h-[13vh] flex items-center justify-center">
+        <input type="text" id="search" class="shadow-2xl rounded-3xl text-md md:text-lg px-3 py-1" name="search" placeholder="Search for a city here..." />
+        <button id="submit" class="flex justify-center items-center ml-1"><ion-icon class="text-2xl md:text-3xl" name="search"></ion-icon></button>
+      </form>
       
       <div id="load"></div>
   
