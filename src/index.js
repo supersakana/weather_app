@@ -1,5 +1,6 @@
 // import your function
 import callApi from './fetch';
+// import { changeDegree } from './degree';
 import './style.css';
 
 document.querySelector('#submit').addEventListener('click', async (e) => {

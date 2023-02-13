@@ -1,4 +1,5 @@
 import { appendResults, weatherCard } from './dom';
+import { changeDegree } from './degree';
 
 function loadingIcon() {
   const icon = `
@@ -30,6 +31,12 @@ async function callApi(city) {
   }
   document.querySelector('#results').classList.remove('hidden');
   document.querySelector('#load').innerHTML = '';
+
+  document.querySelectorAll('.degree').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      changeDegree();
+    });
+  });
 }
 
 export default callApi;
