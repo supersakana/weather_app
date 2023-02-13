@@ -2,6 +2,8 @@ import {
   toF, toC, toTime, sunRiseSet, toMph, // eslint-disable-line
 } from './conversion';
 
+import { displayTemp } from './degree';
+
 import { forcastCards } from './forcast';
 
 function appendResults(content) {
@@ -30,7 +32,7 @@ function weatherCard(current, forcast) {
 
         <!-- Temp -->
         <div class="flex justify-center">
-          <span class="text-6xl md:text-7xl">${toF(current.main.temp)}</span>
+          <span data-f="${toF(current.main.temp)}" data-c="${toC(current.main.temp)}" class="temp text-6xl md:text-7xl">${displayTemp(current.main.temp)}</span>
           <div class="w-[10px] h-[10px] border-black border-[2px] rounded-full mx-[3px]"></div>
           <span class="text-4xl">F</span>
         </div>
@@ -40,14 +42,14 @@ function weatherCard(current, forcast) {
 
           <!-- High -->
           <div class="flex text-black">
-            <span>${toF(current.main.temp_max)}</span>
+            <span data-f="${toF(current.main.temp_max)}" data-c="${toC(current.main.temp_max)}" class="temp">${displayTemp(current.main.temp_max)}</span>
             <div class="w-[5px] h-[5px] border-black border-[1.5px] rounded-full"></div>
             <span>F</span>
           </div>
 
           <!-- Low -->
           <div class="flex text-gray-400">
-            <span>${toF(current.main.temp_min)}</span>
+            <span data-f="${toF(current.main.temp_min)}" data-c="${toC(current.main.temp_min)} class="temp">${displayTemp(current.main.temp_min)}</span>
             <div class="w-[5px] h-[5px] border-gray-400 border-[1.5px] rounded-full"></div>
             <span>F</span>
           </div>
@@ -66,21 +68,11 @@ function weatherCard(current, forcast) {
         <div class="flex justify-between">
         <span class="cursor-pointer text-2xl text-center md:text-left">5-day Forcast</span>
 
-        <div class="flex gap-x-3">
-
-          <div class="degree flex items-center justify-center bg-black text-white rounded-full w-[30px] h-[30px] shadow-md cursor-pointer">
-            <div class="flex">
-              <div class="w-[5px] h-[5px] border-white border-[1px] rounded-full m-[1px]"></div>
-              <span class="text-sm">F</span>
-            </div>
-          </div>
-  
-          <div class="degree flex items-center justify-center bg-white text-black rounded-full w-[30px] h-[30px] shadow-md cursor-pointer">
+        <div class="degree flex items-center justify-center bg-white text-black rounded-full w-[30px] h-[30px] shadow-md cursor-pointer">
             <div class="flex">
               <div class="w-[5px] h-[5px] border-black border-[1px] rounded-full m-[1px]"></div>
-              <span class="text-sm">C</span>
+              <span class="text-sm">F</span>
             </div>
-          </div>
         </div>
       </div>  
 

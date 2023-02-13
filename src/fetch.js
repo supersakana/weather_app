@@ -1,6 +1,7 @@
 import { appendResults, weatherCard } from './dom';
 import { changeDegree } from './degree';
 
+// needs to move into load.js file
 function loadingIcon() {
   const icon = `
   <div role="status" class="h-[80vh] flex items-center justify-center">
@@ -15,6 +16,7 @@ function loadingIcon() {
   load.innerHTML = icon;
 }
 
+// clean up
 async function callApi(city) {
   document.querySelector('#results').classList.add('hidden');
   loadingIcon();

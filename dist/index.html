@@ -19,7 +19,7 @@
       
       <div id="load"></div>
   
-      <div id="results" class="max-w-[1500px] md:max-h-[600px] h-full mt-1 mb-8 bg-gray-100 md:mx-10 mx-3 rounded-xl shadow-2xl grid md:grid-cols-sidebar">
+      <div id="results" data-temp="f" class="max-w-[1500px] md:max-h-[600px] h-full mt-1 mb-8 bg-gray-100 md:mx-10 mx-3 rounded-xl shadow-2xl grid md:grid-cols-sidebar">
       <!-- LEFT -->
       <div class="bg-white flex flex-col py-2 px-3 rounded-t-xl md:rounded-r-none md:rounded-l-xl justify-evenly">
         <!-- City -->
@@ -34,7 +34,7 @@
         </div>
         <!-- Temp -->
         <div class="flex justify-center">
-          <span class="text-6xl md:text-7xl">57</span>
+          <span class="temp text-6xl md:text-7xl">57</span>
           <div class="w-[10px] h-[10px] border-black border-[2px] rounded-full mx-[3px]"></div>
           <span class="text-4xl">F</span>
         </div>
@@ -42,13 +42,13 @@
         <div class="flex gap-x-3 text-xl justify-center">
           <!-- High -->
           <div class="flex text-black">
-            <span>60</span>
+            <span class="temp">60</span>
             <div class="w-[5px] h-[5px] border-black border-[1.5px] rounded-full"></div>
             <span>F</span>
           </div>
           <!-- Low -->
           <div class="flex text-gray-400">
-            <span>55</span>
+            <span class="temp">55</span>
             <div class="w-[5px] h-[5px] border-gray-400 border-[1.5px] rounded-full"></div>
             <span>F</span>
           </div>
