@@ -1,7 +1,6 @@
 import {
-  appendResults, weatherCard, hideContent, displayContent,
+  hideContent, displayError, displayResults,
 } from './dom';
-import { changeDegree } from './degree';
 import { loading } from './load';
 
 async function fetchApi(city) {
@@ -14,12 +13,10 @@ async function fetchApi(city) {
     const response2 = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${current.coord.lat}&lon=${current.coord.lon}&appid=e7775dd9f2432256b7d57eb357896009`);
     const forcast = await response2.json();
 
-    weatherCard(current, forcast);
+    displayResults(current, forcast);
   } catch {
-    appendResults(`<p>Invalid search for "${city}"</p>`);
+    displayError(city);
   }
-  displayContent();
-  document.querySelectorAll('.degree').forEach((btn) => btn.addEventListener('click', changeDegree));
 }
 
 export default fetchApi;

@@ -7,7 +7,7 @@
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
-  </head>
+  <script defer src="runtime.js"></script><script defer src="main.js"></script></head>
   <body class="w-full h-full bg-gray-300 font-poppins">
 
     <section class="md:h-[100vh] w-full md:flex flex-col justify-center items-center">
@@ -25,6 +25,8 @@
       </div>
       
       <div id="load"></div>
+
+      <h5 id="error" class="text-xl text-center"></h5>
   
       <div id="results" data-temp="f" class="hidden max-w-[1500px] md:max-h-[600px] h-full mt-1 mb-8 bg-gray-100 md:mx-10 mx-3 rounded-xl shadow-2xl grid md:grid-cols-sidebar"></div>
     </section>
