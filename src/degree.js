@@ -20,11 +20,7 @@ function changeDegree() {
   let unit = document.querySelector('#results')
 
   temps.forEach((temp) => {
-    if (unit.dataset.temp == 'f'){
-      temp.innerHTML = temp.dataset.c
-    } else {
-      temp.innerHTML = temp.dataset.f
-    }
+    (unit.dataset.temp == 'f') ? temp.innerHTML = temp.dataset.c : temp.innerHTML = temp.dataset.f
   })
   updateUnit(unit)
 }

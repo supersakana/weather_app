@@ -2,10 +2,7 @@
 import { toF, toC } from './conversion';
 import { displayTemp } from './degree';
 
-function forcastCards(forcast) {
-  let date = '';
-  let cards = '';
-  let i = 0
+function forcastCards(forcast, i = 0, date = '', cards = '') {
 
   forcast.list.forEach((day) => {
     if (date != moment(day.dt_txt).format('MMM D') && i < 5 && day.weather[0].icon.includes('d')) {
