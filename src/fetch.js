@@ -4,7 +4,7 @@ import {
 import { changeDegree } from './degree';
 import { loading } from './load';
 
-async function callApi(city) {
+async function fetchApi(city) {
   hideContent();
   loading();
   try {
@@ -22,4 +22,4 @@ async function callApi(city) {
   document.querySelectorAll('.degree').forEach((btn) => btn.addEventListener('click', changeDegree));
 }
 
-export default callApi;
+export default fetchApi;
