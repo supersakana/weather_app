@@ -1,4 +1,6 @@
-import { appendResults, weatherCard, hideContent } from './dom';
+import {
+  appendResults, weatherCard, hideContent, displayContent,
+} from './dom';
 import { changeDegree } from './degree';
 import { loading } from './load';
 
@@ -16,9 +18,7 @@ async function callApi(city) {
   } catch {
     appendResults(`<p>Invalid search for "${city}"</p>`);
   }
-  document.querySelector('#results').classList.remove('hidden');
-  document.querySelector('#form').classList.remove('hidden');
-  document.querySelector('#load').innerHTML = '';
+  displayContent();
 
   document.querySelectorAll('.degree').forEach((btn) => {
     btn.addEventListener('click', () => {

@@ -15,6 +15,12 @@ function hideContent() {
   document.querySelector('#title').classList.add('hidden');
 }
 
+function displayContent() {
+  document.querySelector('#results').classList.remove('hidden');
+  document.querySelector('#form').classList.remove('hidden');
+  document.querySelector('#load').innerHTML = '';
+}
+
 function weatherCard(current, forcast) {
   appendResults(
     /* eslint-disable */
@@ -172,4 +178,6 @@ function weatherCard(current, forcast) {
   /* eslint-enable */
 }
 
-export { appendResults, weatherCard, hideContent };
+export {
+  appendResults, weatherCard, hideContent, displayContent,
+};
