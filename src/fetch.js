@@ -19,12 +19,7 @@ async function callApi(city) {
     appendResults(`<p>Invalid search for "${city}"</p>`);
   }
   displayContent();
-
-  document.querySelectorAll('.degree').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      changeDegree();
-    });
-  });
+  document.querySelectorAll('.degree').forEach((btn) => btn.addEventListener('click', changeDegree));
 }
 
 export default callApi;
