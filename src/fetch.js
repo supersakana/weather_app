@@ -20,6 +20,7 @@ function loadingIcon() {
 async function callApi(city) {
   document.querySelector('#results').classList.add('hidden');
   document.querySelector('#form').classList.add('hidden');
+  document.querySelector('#title').classList.add('hidden');
   loadingIcon();
   try {
     const response1 = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=e7775dd9f2432256b7d57eb357896009`, { mode: 'cors' });
