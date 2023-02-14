@@ -1,14 +1,18 @@
 import {
   toF, toC, toTime, sunRiseSet, toMph, // eslint-disable-line
 } from './conversion';
-
 import { displayTemp, displayUnit } from './degree';
-
 import { forcastCards } from './forcast';
 
 function appendResults(content) {
   const results = document.querySelector('#results');
   results.innerHTML = content;
+}
+
+function hideContent() {
+  document.querySelector('#results').classList.add('hidden');
+  document.querySelector('#form').classList.add('hidden');
+  document.querySelector('#title').classList.add('hidden');
 }
 
 function weatherCard(current, forcast) {
@@ -168,4 +172,4 @@ function weatherCard(current, forcast) {
   /* eslint-enable */
 }
 
-export { appendResults, weatherCard };
+export { appendResults, weatherCard, hideContent };
