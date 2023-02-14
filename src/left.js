@@ -4,7 +4,7 @@ import { displayTemp, displayUnit } from './degree';
 function leftBar(current) {
   return `
     <!-- LEFT -->
-      <div class="bg-white flex flex-col py-2 px-3 rounded-t-xl md:rounded-r-none md:rounded-l-xl justify-evenly">
+    <div class="bg-white flex flex-col py-2 px-3 rounded-t-xl md:rounded-r-none md:rounded-l-xl justify-evenly">
 
         <!-- City -->
         <div class="flex flex-col gap-y-2 my-[20px] md:my-0">
@@ -48,7 +48,7 @@ function leftBar(current) {
           <img class="w-[50px] h-[50px]"src="http://openweathermap.org/img/wn/${current.weather[0].icon}@2x.png">
           <h3 class="text-lg">${current.weather[0].main}</h3>
         </div>
-      </div>
+    </div>
     `;
 }
 
