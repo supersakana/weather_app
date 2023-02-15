@@ -24,7 +24,7 @@ function rightBar(current, forcast) {
   </div>
 
   <!-- Todays Highlights -->
-  <h5 class="text-2xl my-1 text-center md:text-left">Today's Highlights</h5>
+  <h5 class="text-2xl my-1 md:text-left">Today's Highlights</h5>
   <div class=" h-[100%] grid grid-cols-2 md:grid-cols-3 gap-4">
     ${highlightCards(current)}
   </div>
